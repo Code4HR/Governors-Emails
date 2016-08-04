@@ -31,6 +31,8 @@ class KaineEmailTable extends Table
         parent::initialize($config);
 
         $this->table('kaine_email');
+        $this->displayField('id');
+        $this->primaryKey('id');
     }
 
     /**
@@ -42,10 +44,15 @@ class KaineEmailTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
+            ->integer('id')
+            ->allowEmpty('id', 'create')
+            ->add('id', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
             ->allowEmpty('file');
 
         $validator
-            ->date('date')
+            ->time('date')
             ->allowEmpty('date');
 
         $validator
@@ -64,5 +71,19 @@ class KaineEmailTable extends Table
             ->allowEmpty('body');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['id']));
+
+        return $rules;
     }
 }
