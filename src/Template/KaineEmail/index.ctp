@@ -10,8 +10,8 @@
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('date') ?></th>
-				<th><?= $this->Paginator->sort('senderName') ?></th>
-				<th><?= $this->Paginator->sort('recipientName') ?></th>
+				<th><?= $this->Paginator->sort('senderName', 'Sender') ?></th>
+				<th><?= $this->Paginator->sort('recipientName', 'Recipient') ?></th>
 				<th><?= $this->Paginator->sort('subject') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>

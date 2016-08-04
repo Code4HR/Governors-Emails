@@ -25,15 +25,15 @@
         <?= $this->Text->autoParagraph(h($kaineEmail->subject)); ?>
     </div>
     <div class="row">
-        <h4><?= __('SenderName') ?></h4>
+        <h4><?= __('Sender') ?></h4>
         <?= $this->Text->autoParagraph(h($kaineEmail->senderName)); ?>
     </div>
     <div class="row">
-        <h4><?= __('RecipientName') ?></h4>
+        <h4><?= __('Recipient') ?></h4>
         <?= $this->Text->autoParagraph(h($kaineEmail->recipientName)); ?>
     </div>
     <div class="row">
-        <h4><?= __('CcName') ?></h4>
+        <h4><?= __('CC') ?></h4>
         <?= $this->Text->autoParagraph(h($kaineEmail->ccName)); ?>
     </div>
     <div class="row">
