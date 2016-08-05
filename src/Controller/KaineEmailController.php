@@ -11,6 +11,11 @@ use App\Controller\AppController;
 class KaineEmailController extends AppController
 {
 
+	public function initialize()
+	{
+		parent::initialize();
+	}
+
     /**
      * Index method
      *
@@ -18,10 +23,17 @@ class KaineEmailController extends AppController
      */
     public function index()
     {
-        $kaineEmail = $this->paginate($this->KaineEmail);
+       /* $kaineEmail = $this->paginate($this->KaineEmail);
 
         $this->set(compact('kaineEmail'));
-        $this->set('_serialize', ['kaineEmail']);
+        $this->set('_serialize', ['kaineEmail']);*/
+		
+		$query = $this->KaineEmail
+        // Use the plugins 'search' custom finder and pass in the
+        // processed query params
+        ->find('search', ['search' => $this->request->query]);
+
+		$this->set('kaineEmail', $this->paginate($query));
     }
 
     /**
@@ -40,6 +52,9 @@ class KaineEmailController extends AppController
         $this->set('kaineEmail', $kaineEmail);
         $this->set('_serialize', ['kaineEmail']);
     }
+	
+	public function search() {
+	}
 
    
 }
