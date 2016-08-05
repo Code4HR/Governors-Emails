@@ -15,7 +15,8 @@ An application for viewing and searching Virginia Governor Kaine's emails
 Edit /config/app.php to connect to the database
 
 e.g.
-```'Datasources' => [
+```
+'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Sqlite',
