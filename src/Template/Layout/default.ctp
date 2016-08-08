@@ -27,6 +27,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+	<?= $this->Html->css('zebra_datepicker.css') ?>
+	
+	<?= $this->Html->script('jquery-3.1.0.min.js') ?>
+	<?= $this->Html->script('zebra_datepicker.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
