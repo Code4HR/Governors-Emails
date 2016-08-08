@@ -11,7 +11,6 @@
 		echo $this->Form->create(null, ['type' => 'get', 'url' => ['action' => 'index']]);
 		// You'll need to populate $authors in the template from your controller
 		echo $this->Form->input('date',['class'=>'datepicker', 'readonly'=>'readonly']);
-		echo $this->Form->button('Pick a date', ['type' => 'button', 'class'=>'Zebra_DatePicker_Icon Zebra_DatePicker_Icon_Inside', 'style'=>'top: 2.5px; left: 154px;']);
 
 		// Match the search param in your table configuration
 		echo $this->Form->input('from');
