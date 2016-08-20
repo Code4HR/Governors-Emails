@@ -14,7 +14,6 @@ An application for viewing and searching Virginia Governor Kaine's emails
 ## Configuration
 
 1. Edit /config/app.php to connect to the database
-
 e.g.
 ```
 'Datasources' => [
@@ -35,7 +34,6 @@ e.g.
 ```
 
 2. Edit /config/app.php to use Recaptcha
-
 e.g.
 ```
 'Recaptcha' => [
