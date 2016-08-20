@@ -14,8 +14,9 @@ An application for viewing and searching Virginia Governor Kaine's emails
 ## Configuration
 
 1. Edit /config/app.php to connect to the database
-e.g.
-```
+
+ e.g.
+ ```
 'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
@@ -31,10 +32,11 @@ e.g.
             'url' => env('DATABASE_URL', null),
         ],
     ],
-```
+ ```
 2. Edit /config/app.php to use Recaptcha
-e.g.
-```
+
+ e.g.
+ ```
 'Recaptcha' => [
         // Register API keys at https://www.google.com/recaptcha/admin
         'sitekey' => 'siteKey',
@@ -49,5 +51,5 @@ e.g.
         // either normal or compact
         'size' => 'normal'
     ],
-```
+ ```
 3. Apply any other relevant configuration.
