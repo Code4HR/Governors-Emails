@@ -7,6 +7,17 @@
 </nav>
 <div class="kaineEmail index large-9 medium-8 columns content">
     <h3><?= __("Governor Kaine's Email") ?></h3>
+	<?php if($RecaptchaComplete != true): ?>
+	<div>
+		<h4>Complete Recaptcha to view email addresses</h4>
+		
+		<?= $this->Form->create() ?>
+		<?= $this->Recaptcha->display() ?>
+		<?= $this->Form->button(__('Submit')) ?>
+		<?= $this->Form->end() ?>
+		
+	</div>
+	<?php endif; ?>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -21,8 +32,24 @@
             <?php foreach ($kaineEmail as $kaineEmail): ?>
             <tr>
                 <td><?= h($kaineEmail->date) ?></td>
-				<td><?= $kaineEmail->senderName ?></td>
-				<td><?= $kaineEmail->recipientName ?></td>
+				<td><?php
+					$email = str_replace("'", "", $kaineEmail->senderName);
+					if ($RecaptchaComplete == true || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						echo $kaineEmail->senderName; 
+					}
+					else {
+						echo "Hidden";
+					}
+				?></td>
+				<td><?php
+					$email = str_replace("'", "", $kaineEmail->recipientName);
+					if ($RecaptchaComplete == true || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						echo $kaineEmail->recipientName; 
+					}
+					else {
+						echo "Hidden";
+					}
+				?></td>
 				<td><?= $kaineEmail->subject ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $kaineEmail->id]) ?>

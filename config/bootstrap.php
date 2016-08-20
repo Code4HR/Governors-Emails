@@ -221,3 +221,5 @@ Type::build('datetime')
     ->useImmutable();
 
 Plugin::load('Search');
+
+Plugin::load('Recaptcha', ['bootstrap' => true, 'routes' => false]);

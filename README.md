@@ -8,11 +8,12 @@ An application for viewing and searching Virginia Governor Kaine's emails
 2. Clone GitHub repository.
 3. From install folder, run `php composer.phar install`.
 4. From install folder, run `php composer.phar require friendsofcake/search`.
-5. Place database file in install folder (contact Nathan for file)
+5. From install floder, prun `php composer.phar require cakephp-fr/recaptcha:~0.4`.
+6. Place database file in install folder (contact Nathan for file)
 
 ## Configuration
 
-Edit /config/app.php to connect to the database
+1. Edit /config/app.php to connect to the database
 
 e.g.
 ```
@@ -32,4 +33,25 @@ e.g.
         ],
     ],
 ```
-and any other relevant configuration.
+
+2. Edit /config/app.php to use Recaptcha
+
+e.g.
+```
+'Recaptcha' => [
+        // Register API keys at https://www.google.com/recaptcha/admin
+        'sitekey' => 'siteKey',
+        'secret' => 'secretKey',
+        // reCAPTCHA supported 40+ languages listed
+        // here: https://developers.google.com/recaptcha/docs/language
+        'lang' => 'en',
+        // either light or dark
+        'theme' => 'light',
+        // either image or audio
+        'type' => 'image',
+        // either normal or compact
+        'size' => 'normal'
+    ],
+```
+
+3. Apply any other relevant configuration.
