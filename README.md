@@ -32,7 +32,6 @@ e.g.
         ],
     ],
 ```
-
 2. Edit /config/app.php to use Recaptcha
 e.g.
 ```
@@ -51,5 +50,4 @@ e.g.
         'size' => 'normal'
     ],
 ```
-
 3. Apply any other relevant configuration.
